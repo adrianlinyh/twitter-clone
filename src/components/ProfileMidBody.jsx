@@ -1,9 +1,12 @@
 import { Button, Col, Image, Nav, Row, Spinner } from "react-bootstrap";
 import ProfilePostCard from "./ProfilePostCard";
-import { jwtDecode } from "jwt-decode";
-import { useEffect } from "react";
+// import { jwtDecode } from "jwt-decode";
+// import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useContext, useEffect } from "react";
+import { AuthContext } from "./AuthProvider";
 import { fetchPostsByUser } from "../features/posts/postsSlice";
+// import { fetchPostsByUser } from "../features/posts/postsSlice";
 
 export default function ProfileMidBody(){
     // const [posts, setPosts] = useState([]);
@@ -13,6 +16,7 @@ export default function ProfileMidBody(){
     const dispatch = useDispatch();
     const posts = useSelector((state) => state.posts.posts);
     const loading = useSelector((state) => state.posts.loading);
+    const {currentUser} = useContext(AuthContext);
 
     //fetch post based on user id
 
@@ -27,13 +31,17 @@ export default function ProfileMidBody(){
     // };
 
     useEffect(() => {
-        const token = localStorage.getItem('authToken');
-        if (token) {
-            const decodedToken = jwtDecode(token);
-            const userId = decodedToken.id;
-            dispatch(fetchPostsByUser(userId));
-        }
-    }, [dispatch]);
+        dispatch(fetchPostsByUser(currentUser.uid));
+    }, [dispatch, currentUser]);
+
+    // useEffect(() => {
+    //     const token = localStorage.getItem('authToken');
+    //     if (token) {
+    //         const decodedToken = jwtDecode(token);
+    //         const userId = decodedToken.id;
+    //         dispatch(fetchPostsByUser(userId));
+    //     }
+    // }, [dispatch]);
     //         fetchPosts(userId);
     //     }
     // }, []);
@@ -98,7 +106,7 @@ export default function ProfileMidBody(){
             )}
 
             {posts.map((post) => (
-                <ProfilePostCard key={post.id} content={post.content} postId={post.id} />
+                <ProfilePostCard key={post.id} post = {post} />
 
             ))}
             
