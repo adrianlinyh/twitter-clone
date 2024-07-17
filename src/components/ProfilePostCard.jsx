@@ -13,7 +13,7 @@ export default function ProfilePostCard({post}) {
     const userId = currentUser.uid;
 
     const isLiked = likes.includes(userId)
-    const pic='https://pbs.twimg.com/profile_images/1587405892437221376/h167Jlb2_400x400.jpg';
+    const pic='https://avatars.githubusercontent.com/u/171110461?v=4';
 
     const [showUpdateModal, setShowUpdateModal] = useState(false);
 
@@ -61,8 +61,8 @@ export default function ProfilePostCard({post}) {
             </Col>
 
             <Col>
-                <strong>Haris</strong>
-                <span>@haris.samingan . Apr 16</span>
+                <strong>Adrian Lin</strong>
+                <span>@a.lin  ·  Jul 14</span>
                 <p>{content}</p>
                 <Image src = {imageUrl} style={{ width : 150 }} />
                 <div className = 'd-flex justify-content-between'>

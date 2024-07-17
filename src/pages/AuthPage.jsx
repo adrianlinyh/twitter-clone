@@ -131,7 +131,7 @@ export default function AuthPage() {
                                 />
                             </Form.Group>
                             <p style={{ fontSize: '12px' }}>
-                            By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use. SigmaTweets may use your contact information, including your email address and phone number for purposes outlined in our Privacy Policy, like keeping your account secure and personalising our services, including ads. Learn more. Others will be able to find you by email or phone number, when provided, unless you choose otherwise here.
+                            By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use. 
                             </p>
 
                             <Button className='rounded-pill' type='submit'>

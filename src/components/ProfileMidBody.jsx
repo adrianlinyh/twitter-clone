@@ -10,8 +10,8 @@ import { fetchPostsByUser } from "../features/posts/postsSlice";
 
 export default function ProfileMidBody(){
     // const [posts, setPosts] = useState([]);
-    const url = 'https://pbs.twimg.com/profile_banners/83072625/1602845571/1500x500';
-    const pic = 'https://pbs.twimg.com/profile_images/1587405892437221376/h167Jlb2_400x400.jpg';
+    const url = 'https://rerouting.ca/wp-content/uploads/2021/03/Simple-Technology-LinkedIn-Banner.png';
+    const pic = 'https://avatars.githubusercontent.com/u/171110461?v=4';
 
     const dispatch = useDispatch();
     const posts = useSelector((state) => state.posts.posts);
@@ -50,6 +50,8 @@ export default function ProfileMidBody(){
         <Col sm={6} className='bg-light' style={{border: '1px solid lightgrey'}}>
             <Image src={url} fluid />
             <br />
+            <br />
+
             <Image
             src={pic}
             roundedCircle
@@ -61,6 +63,8 @@ export default function ProfileMidBody(){
                 marginLeft: 15,
             }}
             />
+            <br />
+           
 
             <Row className = 'justify-content-end'>
                 <Col xs='auto'>
@@ -71,14 +75,14 @@ export default function ProfileMidBody(){
             </Row>
 
             <p className='mt-5' style={{ margin: 0, fontWeight: 'bold', fontSize: '15px' }}>
-                Haris
+                Adrian Lin
             </p>
 
-            <p style={{ marginBottom: '2px' }}>@haris.samingan</p>
+            <p style={{ marginBottom: '2px' }}>@a.lin</p>
 
-            <p>I help people switch careers to be a software developer at sigmaschool.co</p>
+            <p>Enhancing my life one code at a time.</p>
 
-            <p>Entrepreneur</p>
+            <p>Aspiring Software Developer</p>
 
             <p>
                 <strong>271</strong> Following <strong>610</strong> Followers
